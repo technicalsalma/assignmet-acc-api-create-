@@ -11,15 +11,17 @@ module.exports.getRandomData = (req, res) => {
 module.exports.getAllUser = (req, res) => {
     const q = req.query.limit;
 
-    if (q > user.length) {
+    if (q > data.length) {
         return res.send(user);
     }
 
     if (q) {
-        return res.send(user.slice(0, q));
+        return res.send(data.slice(0, q));
     }
     res.send(data)
 }
+
+
 
 module.exports.postAData = (req, res) => {
     const { gender, name, contact, address, photoUrl } = req.body;
